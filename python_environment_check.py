@@ -1,7 +1,8 @@
 import sys
-from distutils.version import LooseVersion
+# from distutils.version import LooseVersion
+from packaging.version import Version as LooseVersion
 
-if LooseVersion(sys.version) < LooseVersion('3.8'):
+if LooseVersion(sys.version.split()[0]) < LooseVersion('3.8'):
     print('[FAIL] We recommend Python 3.8 or newer but'
           ' found version %s' % (sys.version))
 else:
